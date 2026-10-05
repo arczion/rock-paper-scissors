@@ -33,6 +33,8 @@ declare winner based on max wins
 
 
 */
+// generate a random number between 1 & 3
+// return string
 
 function getComputerChoice() {
     
@@ -49,3 +51,14 @@ function getComputerChoice() {
 
 
 }
+
+
+// get user input
+
+function getHumanChoice() {
+    
+    let choice = prompt("Enter your choice");
+    return choice;
+}
+
+console.log(getHumanChoice());
