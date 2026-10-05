@@ -36,6 +36,9 @@ declare winner based on max wins
 // generate a random number between 1 & 3
 // return string
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     
     let compChoice = Math.floor(Math.random() * 3);
