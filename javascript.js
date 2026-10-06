@@ -61,7 +61,6 @@ function getComputerChoice() {
     return "scissors"
 }
 
-
 // 2. Human choice prompt
 function getHumanChoice() {
     let choice = prompt("Enter rock, paper, or scissors:");
@@ -70,12 +69,11 @@ function getHumanChoice() {
     return choice.toLowerCase();
 }
 
-// function to play the game that calls playRound
-
+// 3. Main game controller
 function playGame() {
 // the score variables have to declared on top before being called
-let humanScore = 0;
-let computerScore = 0;
+    let humanScore = 0;
+    let computerScore = 0;
 
     function playRound(humanChoice, computerChoice) {
         
@@ -84,7 +82,9 @@ let computerScore = 0;
     }     
     // Check all combinations where the human wins
     else if (
-        (humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper")
+        (humanChoice === "rock" && computerChoice === "scissors") || 
+        (humanChoice === "paper" && computerChoice === "rock") || 
+        (humanChoice === "scissors" && computerChoice === "paper")
     ) {
         humanScore++;
         console.log(`You win this round! ${humanChoice.toUpperCase} beats ${computerChoice.toUpperCase()}.`);
@@ -152,7 +152,7 @@ let computerScore = 0;
 */
 
 
-// Function call to playRound 5 times
+// Play % rounds using a loop
 for ( let i=0; i < 5; i++) {
     // call choice functions to get the human & computer inputs & store the values
     const humanSelection = getHumanChoice();
@@ -160,7 +160,8 @@ for ( let i=0; i < 5; i++) {
     playRound(humanSelection, computerSelection)
  
 }
-
+// Final game declaration
+console.log("FINAL RESULT");
 if (humanScore > computerScore) {
     console.log(`\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}`);
     console.log("Congratulations! You won the match!");
@@ -171,10 +172,12 @@ if (humanScore > computerScore) {
     console.log(`\n Final Score -> Human: ${humanScore} | Computer: ${computerScore}`);
     console.log("The match is a tie!");
 }        
+
+// Start the game
+playGame();
 /* function resetCounter() {
     humanScore = 0;
     computerScore = 0;
 } */
 // resetCounter(); not needed anymore
-}
 }
