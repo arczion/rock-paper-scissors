@@ -95,40 +95,52 @@ scissor scissor
    
         // common choice for all cases
         if(humanChoice == computerChoice){
-            console.log(`Its a draw`)
-            console.log(`The Player choice is ${humanChoice} & Computer Score is ${computerChoice}`);
+            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
+            console.log(`Its a draw`);
+            console.log(`Human Score: ${humanScore} \n computerScore: ${computerScore}`);
         }
    // possible combinations
         else if (humanChoice == "Rock" && computerChoice == "Scissor") {
             humanScore += 1;
+            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
             console.log("Rock beats Scissor");
-            console.log(`The Player choice is ${humanChoice} & Computer Score is ${computerChoice}`);
+            console.log(`Human Score: ${humanScore} \n computerScore: ${computerScore}`);
         }
         else if (humanChoice == "Rock" && computerChoice == "Paper") {
             computerScore += 1;
+            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
             console.log("Paper beats Rock");
-            console.log(`The Player choice is ${humanChoice} & Computer Score is ${computerChoice}`);
+            console.log(`Human Score: ${humanScore} \n computerScore: ${computerScore}`);
         }
+
         else if (humanChoice == "Paper" && computerChoice == "Rock") {
         
             humanScore += 1;
+            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
             console.log("Paper beats Rock");
-            console.log(`The Player choice is ${humanChoice} & Computer Score is ${computerChoice}`);
+            console.log(`Human Score: ${humanScore} \n computerScore: ${computerScore}`);
+
         }
         else if (humanChoice == "Paper" && computerChoice == "Scissor") {
             computerScore += 1;
+            
+            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
             console.log("Scissor beat Paper");
-            console.log(`The Player choice is ${humanChoice} & Computer Score is ${computerChoice}`);
+            console.log(`Human Score: ${humanScore} \n computerScore: ${computerScore}`);
+
         }
         else if (humanChoice == "Scissor" && computerChoice == "Rock") {
             computerScore += 1;
+            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
             console.log("Rock beats Scissor");
-            console.log(`The Player choice is ${humanChoice} & Computer Score is ${computerChoice}`);
+            console.log(`Human Score: ${humanScore} \n computerScore: ${computerScore}`);
+
         }
         else if (humanChoice == "Scissor" && computerChoice == "Paper") {
             humanScore += 1;
+            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
             console.log("Scissor beats Paper");
-            console.log(`The Player choice is ${humanChoice} & Computer Score is ${computerChoice}`);
+            console.log(`Human Score: ${humanScore} \n computerScore: ${computerScore}`);
         }
      }
 
