@@ -52,7 +52,7 @@ scissor scissor
 var computerScore = 0; declaring inside play game function, this will remove the need to reset it.
 */
 
-// Computer choice generator
+// 1.Computer choice generator
 function getComputerChoice() {
     
     let compChoice = Math.floor(Math.random() * 3);
@@ -62,11 +62,11 @@ function getComputerChoice() {
 }
 
 
-// get user input
-
+// 2. Human choice prompt
 function getHumanChoice() {
-    
-    let choice = prompt("Enter your choice");
+    let choice = prompt("Enter rock, paper, or scissors:");
+    // if user clicks cancels or empty, default to rock
+    if (!choice) return "rock";
     return choice.toLowerCase();
 }
 
