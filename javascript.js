@@ -49,7 +49,7 @@ function getComputerChoice() {
         return "paper"
     }
     else
-        return "scissor"
+        return "scissors"
 }
 
 
@@ -64,18 +64,6 @@ function getHumanChoice() {
 // function to play the game that calls playRound
 
 function playGame() {
-
-// Function call to playRound 5 times
-let humanScore = 0;
-let computerScore = 0;
-
-for (i=0; i < 5; i++) {
-    // call choice functions to get the human & computer inputs & store the values
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection)
- 
-}
 
 /*
 possible combinations 
@@ -102,7 +90,7 @@ scissor scissor
             console.log(`Human Score: ${humanScore} \nComputer Score: ${computerScore}`);
         }
    // possible combinations
-        else if (humanChoice == "rock" && computerChoice == "scissor") {
+        else if (humanChoice == "rock" && computerChoice == "scissors") {
             humanScore++;
             console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
             console.log("Rock beats Scissor");
@@ -123,21 +111,21 @@ scissor scissor
             console.log(`Human Score: ${humanScore} \nComputer Score: ${computerScore}`);
 
         }
-        else if (humanChoice == "paper" && computerChoice == "scissor") {
+        else if (humanChoice == "paper" && computerChoice == "scissors") {
             computerScore++;
             console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
-            console.log("Scissor beat Paper");
+            console.log("Scissors beat Paper");
             console.log(`Human Score: ${humanScore} \nComputer Score: ${computerScore}`);
 
         }
-        else if (humanChoice == "scissor" && computerChoice == "rock") {
+        else if (humanChoice == "scissors" && computerChoice == "rock") {
             computerScore++;
             console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
-            console.log("Rock beats Scissor");
+            console.log("Rock beats Scissors");
             console.log(`Human Score: ${humanScore} \nComputer Score: ${computerScore}`);
 
         }
-        else if (humanChoice == "scissor" && computerChoice == "paper") {
+        else if (humanChoice == "scissors" && computerChoice == "paper") {
             humanScore++;
             console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
             console.log("Scissor beats Paper");
@@ -145,6 +133,18 @@ scissor scissor
         }
      }
 
+
+    // Function call to playRound 5 times
+let humanScore = 0;
+let computerScore = 0;
+
+for (i=0; i < 5; i++) {
+    // call choice functions to get the human & computer inputs & store the values
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection)
+ 
+}
 
 
 function score() {
@@ -163,10 +163,10 @@ function score() {
             }
         
         }
-function resetCounter() {
+/* function resetCounter() {
     humanScore = 0;
     computerScore = 0;
-}
+} */
 score();
-resetCounter();
+// resetCounter(); not needed anymore
 }
