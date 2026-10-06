@@ -138,7 +138,7 @@ scissor scissor
 let humanScore = 0;
 let computerScore = 0;
 
-for (i=0; i < 5; i++) {
+for ( let i=0; i < 5; i++) {
     // call choice functions to get the human & computer inputs & store the values
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
