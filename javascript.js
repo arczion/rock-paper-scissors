@@ -28,10 +28,23 @@ repeat the rounds
 calculate the wins
 declare winner based on max wins
 
+/*
+possible combinations 
 
-0 - rock 1- paper 2-scissor
+rock paper
+rock scissor
+rock rock
 
+paper rock
+paper scissor
+paper paper
+
+scissor rock
+scissor paper
+scissor scissor
 */
+
+//0 - rock 1- paper 2-scissor
 // generate a random number between 1 & 3
 // return string
 
@@ -65,24 +78,19 @@ function getHumanChoice() {
 
 function playGame() {
 
-/*
-possible combinations 
-
-rock paper
-rock scissor
-rock rock
-
-paper rock
-paper scissor
-paper paper
-
-scissor rock
-scissor paper
-scissor scissor
-*/
+let humanScore = 0;
+let computerScore = 0;
 
     function playRound(humanChoice, computerChoice) {
-   
+        
+       if (humanChoice === computerChoice) {
+        console.log(`It's a draw! Both chose ${humanChoice}`);
+       }     
+
+
+
+    /* The logic can be shortened, writing below
+    
         // common choice for all cases
         if(humanChoice == computerChoice){
             console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
@@ -133,11 +141,10 @@ scissor scissor
         }
      }
 
+*/
 
-    // Function call to playRound 5 times
-let humanScore = 0;
-let computerScore = 0;
 
+// Function call to playRound 5 times
 for ( let i=0; i < 5; i++) {
     // call choice functions to get the human & computer inputs & store the values
     const humanSelection = getHumanChoice();
@@ -169,4 +176,5 @@ function score() {
 } */
 score();
 // resetCounter(); not needed anymore
+}
 }
