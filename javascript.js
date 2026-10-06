@@ -77,7 +77,7 @@ function getHumanChoice() {
 // function to play the game that calls playRound
 
 function playGame() {
-
+// the score variables have to declared on top before being called
 let humanScore = 0;
 let computerScore = 0;
 
@@ -89,7 +89,7 @@ let computerScore = 0;
 
 
 
-    /* The logic can be shortened, writing below
+    /* The logic can be shortened, writing above
     
         // common choice for all cases
         if(humanChoice == computerChoice){
@@ -153,28 +153,20 @@ for ( let i=0; i < 5; i++) {
  
 }
 
-
-function score() {
-               
-        if (humanScore > computerScore) {
-            console.log(`The Player Score is ${humanScore} & Computer Score is ${computerScore}`);
-            console.log("You win the game!");
-            }
-            else if(humanScore < computerScore) {
-                console.log(`The Player Score is ${humanScore} & Computer Score is ${computerScore}`);
-                console.log("Computer wins the game");
-            }
-            else if(humanScore == computerScore) {
-                console.log(`The Player Score is ${humanScore} & Computer Score is ${computerScore}`);
-                console.log("Its a draw!");
-            }
-        
-        }
+if (humanScore > computerScore) {
+    console.log(`\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}`);
+    console.log("Congratulations! You won the match!");
+} else if (humanScore < computerScore) {
+    console.log(`\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}`);
+    console.log("Game Over! The Computer wins the match. ");
+} else {
+    console.log(`\n Final Score -> Human: ${humanScore} | Computer: ${computerScore}`);
+    console.log("The match is a tie!");
+}        
 /* function resetCounter() {
     humanScore = 0;
     computerScore = 0;
 } */
-score();
 // resetCounter(); not needed anymore
 }
 }
