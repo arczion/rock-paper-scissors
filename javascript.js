@@ -108,8 +108,7 @@ scissor scissor
         }
         else if (humanChoice == "rock" && computerChoice == "paper") {
             computerScore++;
-            console.log(`The Player choice is ${humanChoice} & Computer choi
-ce is ${computerChoice}`);
+            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
             console.log("Paper beats Rock");
             console.log(`Human Score: ${humanScore} \nComputer Score: ${computerScore}`);
         }
