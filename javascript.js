@@ -85,10 +85,22 @@ let computerScore = 0;
         
        if (humanChoice === computerChoice) {
         console.log(`It's a draw! Both chose ${humanChoice}`);
-       }     
-
-
-
+    }     
+    // Check all combinations where the human wins
+    else if (
+        (humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+        humanScore++;
+        console.log(`You win this round! ${humanChoice.toUpperCase} beats ${computerChoice.toUpperCase()}.`);
+    }
+    // If it is not a tie and human didn't win, the computer has won and those conditions can be ignored
+    else {
+        computerScore++;
+        console.log(`You lose this round! ${computerChoice.toUpperCase} beats ${humanChoice.toUpperCase()}.`);
+    }
+    // Print current score after the round
+    console.log(`Score -> You: ${humanScore} | Computer: ${computerScore}`);
+}
     /* The logic can be shortened, writing above
     
         // common choice for all cases
