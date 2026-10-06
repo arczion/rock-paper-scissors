@@ -29,15 +29,14 @@ calculate the wins
 declare winner based on max wins
 
 
-
-
+0 - rock 1- paper 2-scissor
 
 */
 // generate a random number between 1 & 3
 // return string
 
-let humanScore = 0;
-let computerScore = 0;
+var humanScore = 0;
+var computerScore = 0;
 
 function getComputerChoice() {
     
@@ -65,3 +64,57 @@ function getHumanChoice() {
 }
 
 console.log(getHumanChoice());
+
+/*
+possible combinations 
+
+rock paper
+rock scissor
+rock rock
+
+paper rock
+paper scissor
+paper paper
+
+scissor rock
+scissor paper
+scissor scissor
+*/
+
+function playRound(humanChoice, computerChoice) {
+   
+   // common choice for all cases
+    if(humanChoice == computerChoice)
+            return "Its a draw";
+   
+   // possible combinations
+    else if (humanChoice == "Rock" && computerChoice == "Scissor") {
+            humanScore += 1;
+            return "Rock beats Scissor";
+        }
+    else if (humanChoice == "Rock" && computerChoice == "Paper") {
+            computerScore += 1;
+            return "Paper beats Rock";
+        }
+    else if (humanChoice == "Paper" && computerChoice == "Rock") {
+        
+            humanScore += 1;
+            return "Paper beats Rock";
+        }
+    else if (humanChoice == "Paper" && computerChoice == "Scissor") {
+            computerScore += 1;
+            return "Scissor beat Paper";
+        }
+    else if (humanChoice == "Scissor" && computerChoice == "Rock") {
+            computerScore += 1;
+            return "Rock beats Scissor";
+        }
+    else if (humanChoice == "Scissor" && computerChoice == "Paper") {
+            humanScore += 1;
+            return "Scissor beats Paper";
+        }
+
+    console.log(`The Player Score is ${humanScore} & Computer Score is ${computerScore}`);
+
+
+}
