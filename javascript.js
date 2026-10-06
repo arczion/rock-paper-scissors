@@ -35,9 +35,9 @@ declare winner based on max wins
 // generate a random number between 1 & 3
 // return string
 
-var humanScore = 0;
-var computerScore = 0;
-
+/* var humanScore = 0;
+var computerScore = 0; declaring inside play game function, this will remove the need to reset it.
+*/
 function getComputerChoice() {
     
     let compChoice = Math.floor(Math.random() * 3);
@@ -66,6 +66,8 @@ function getHumanChoice() {
 function playGame() {
 
 // Function call to playRound 5 times
+let humanScore = 0;
+let computerScore = 0;
 
 for (i=0; i < 5; i++) {
     // call choice functions to get the human & computer inputs & store the values
