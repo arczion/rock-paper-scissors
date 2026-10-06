@@ -87,12 +87,12 @@ function playGame() {
         (humanChoice === "scissors" && computerChoice === "paper")
     ) {
         humanScore++;
-        console.log(`You win this round! ${humanChoice.toUpperCase} beats ${computerChoice.toUpperCase()}.`);
+        console.log(`You win this round! ${humanChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}.`);
     }
     // If it is not a tie and human didn't win, the computer has won and those conditions can be ignored
     else {
         computerScore++;
-        console.log(`You lose this round! ${computerChoice.toUpperCase} beats ${humanChoice.toUpperCase()}.`);
+        console.log(`You lose this round! ${computerChoice.toUpperCase()} beats ${humanChoice.toUpperCase()}.`);
     }
     // Print current score after the round
     console.log(`Score -> You: ${humanScore} | Computer: ${computerScore}`);
@@ -173,11 +173,12 @@ if (humanScore > computerScore) {
     console.log("The match is a tie!");
 }        
 
-// Start the game
-playGame();
 /* function resetCounter() {
     humanScore = 0;
     computerScore = 0;
 } */
 // resetCounter(); not needed anymore
 }
+// Start the game
+playGame();
+
