@@ -61,8 +61,6 @@ function getHumanChoice() {
     return choice;
 }
 
-console.log(getHumanChoice());
-
 // function to play the game that calls playRound
 
 function playGame() {
