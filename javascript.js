@@ -152,14 +152,6 @@ function playGame() {
 */
 
 
-// Play % rounds using a loop
-for ( let i=0; i < 5; i++) {
-    // call choice functions to get the human & computer inputs & store the values
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection)
- 
-}
 // Final game declaration
 console.log("FINAL RESULT");
 if (humanScore > computerScore) {
