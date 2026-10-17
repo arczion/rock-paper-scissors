@@ -38,10 +38,7 @@ let computerScore = 0;
     }
     // Print current score after the round
     let score =`Score -> You: ${humanScore} | Computer: ${computerScore}`;
-    const div = document.querySelector(".results");
-    const para = document.createElement("p");
-    para.textContent = score;
-    div.appendChild(para);
+    appendText(score);
 
 }
 //Event listener
@@ -50,32 +47,27 @@ const buttons= document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", (event) => {
             let target = event.target;
+            let humanChoice;
+            let computerChoice;
+
             switch(target.className) {
                 case 'rock' :
-                    count++;
                     humanChoice = 'rock';
-                    computerChoice = getComputerChoice();
-                    playRound(humanChoice, computerChoice);
                     break;
                 case 'paper' :
-                    count++;
                     humanChoice = 'paper';
-                    computerChoice = getComputerChoice();
-                    playRound(humanChoice, computerChoice);
                     break;
                 case 'scissors' :
-                    count++;
                     humanChoice = 'scissors';
-                    computerChoice = getComputerChoice();
-                    playRound(humanChoice, computerChoice);
                     break;
                 case 'new-game' :
                     resetStats();
                     clearDiv();
-                    break;
-
+                    return;
             }
-                console.log(count);
+                computerChoice = getComputerChoice();
+                playRound(humanChoice, computerChoice);
+                
                 if (humanScore === 5 || computerScore === 5){ 
                 declareResult();
                 resetStats();
