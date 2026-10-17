@@ -97,60 +97,14 @@ function playGame() {
     // Print current score after the round
     console.log(`Score -> You: ${humanScore} | Computer: ${computerScore}`);
 }
-    /* The logic can be shortened, writing above
-    
-        // common choice for all cases
-        if(humanChoice == computerChoice){
-            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
-            console.log(`Its a draw`);
-            console.log(`Human Score: ${humanScore} \nComputer Score: ${computerScore}`);
-        }
-   // possible combinations
-        else if (humanChoice == "rock" && computerChoice == "scissors") {
-            humanScore++;
-            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
-            console.log("Rock beats Scissor");
-            console.log(`Human Score: ${humanScore} \nComputer Score: ${computerScore}`);
-        }
-        else if (humanChoice == "rock" && computerChoice == "paper") {
-            computerScore++;
-            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
-            console.log("Paper beats Rock");
-            console.log(`Human Score: ${humanScore} \nComputer Score: ${computerScore}`);
-        }
+//Event listener
 
-        else if (humanChoice == "paper" && computerChoice == "rock") {
-        
-            humanScore++;
-            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
-            console.log("Paper beats Rock");
-            console.log(`Human Score: ${humanScore} \nComputer Score: ${computerScore}`);
-
-        }
-        else if (humanChoice == "paper" && computerChoice == "scissors") {
-            computerScore++;
-            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
-            console.log("Scissors beat Paper");
-            console.log(`Human Score: ${humanScore} \nComputer Score: ${computerScore}`);
-
-        }
-        else if (humanChoice == "scissors" && computerChoice == "rock") {
-            computerScore++;
-            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
-            console.log("Rock beats Scissors");
-            console.log(`Human Score: ${humanScore} \nComputer Score: ${computerScore}`);
-
-        }
-        else if (humanChoice == "scissors" && computerChoice == "paper") {
-            humanScore++;
-            console.log(`The Player choice is ${humanChoice} & Computer choice is ${computerChoice}`);
-            console.log("Scissor beats Paper");
-            console.log(`Human Score: ${humanScore} \nComputer Score: ${computerScore}`);
-        }
-     }
-
-*/
-
+const buttons= document.querySelectorAll("button");
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            alert(button.className);
+        });
+    });
 
 // Final game declaration
 console.log("FINAL RESULT");
@@ -165,11 +119,6 @@ if (humanScore > computerScore) {
     console.log("The match is a tie!");
 }        
 
-/* function resetCounter() {
-    humanScore = 0;
-    computerScore = 0;
-} */
-// resetCounter(); not needed anymore
 }
 // Start the game
 playGame();
