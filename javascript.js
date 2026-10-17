@@ -38,6 +38,10 @@ let computerScore = 0;
     }
     // Print current score after the round
     let score =`Score -> You: ${humanScore} | Computer: ${computerScore}`;
+    const div = document.querySelector(".results");
+    const para = document.createElement("p");
+    para.textContent = score;
+    div.appendChild(para);
 
 }
 //Event listener
@@ -82,23 +86,26 @@ const buttons= document.querySelectorAll("button");
 function declareResult(){
 
   if (humanScore > computerScore) {
-    let result =`\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}\nCongratulations! You won the match!`;
+    let result =`Final Score -> Human: ${humanScore} | Computer: ${computerScore}\nCongratulations! You won the match!`;
     appendResult(result);
     
 } else if (humanScore < computerScore) {
-    let result = `\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}\nGame Over! The Computer wins the match.`;
+    let result = `\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}
+    \nGame Over! The Computer wins the match.`;
     appendResult(result);
 } else {
-    let result = `\n Final Score -> Human: ${humanScore} | Computer: ${computerScore}\nThe match is a tie!`;
+    let result = `\n Final Score -> Human: ${humanScore} | Computer: ${computerScore}
+    \nThe match is a tie!`;
     appendResult(result);
 }        
 }
 
-function appendText(text) {
+function appendText(text, score) {
     const div = document.querySelector(".results");
     const para = document.createElement("p");
     para.textContent = text;
     div.appendChild(para);
+    
     }
 
 function appendResult(result) {
