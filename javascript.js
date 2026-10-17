@@ -14,9 +14,9 @@ let computerScore = 0;
 
 // Plays one round of game
     function playRound(humanChoice, computerChoice) {
-        
+       let text; 
        if (humanChoice === computerChoice) {
-        let text = `It's a draw! Both chose ${humanChoice}`;
+        text = `It's a draw! Both chose ${humanChoice}`;
         appendText(text);
     }     
     // Check all combinations where the human wins
