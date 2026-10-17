@@ -86,19 +86,19 @@ const buttons= document.querySelectorAll("button");
 // Final game declaration
 
 function declareResult(){
-
-  if (humanScore > computerScore) {
-    let result =`Final Score -> Human: ${humanScore} | Computer: ${computerScore}\nCongratulations! You won the match!`;
-    appendResult(result);
+let result;
+    if (humanScore > computerScore) {
+        result =`Final Score -> Human: ${humanScore} | Computer: ${computerScore}\nCongratulations! You won the match!`;
+        appendResult(result);
     
 } else if (humanScore < computerScore) {
-    let result = `\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}
+        result = `\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}
     \nGame Over! The Computer wins the match.`;
-    appendResult(result);
+        appendResult(result);
 } else {
-    let result = `\n Final Score -> Human: ${humanScore} | Computer: ${computerScore}
+        result = `\n Final Score -> Human: ${humanScore} | Computer: ${computerScore}
     \nThe match is a tie!`;
-    appendResult(result);
+        appendResult(result);
 }        
 }
 
