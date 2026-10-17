@@ -60,17 +60,6 @@ function getComputerChoice() {
     else if (compChoice == 1) return "paper";
     return "scissors"
 }
-
-// 2. Human choice prompt
-function getHumanChoice() {
-    let choice = prompt("Enter rock, paper, or scissors:");
-    // if user clicks cancels or empty, default to rock
-    if (!choice) return "rock";
-    return choice.toLowerCase();
-}
-
-// 3. Main game controller
-function playGame() {
 // the score variables have to declared on top before being called
     let humanScore = 0;
     let computerScore = 0;
@@ -106,7 +95,10 @@ const buttons= document.querySelectorAll("button");
 
             switch(target.className) {
                 case 'rock' :
-                    console.log('Rock');
+                    humanChoice = 'rock';
+                    computerChoice = getComputerChoice();
+                    console.log(computerChoice);
+                    playRound(humanChoice, computerChoice);
                     break;
                 case 'paper' :
                     console.log('Paper');
@@ -131,7 +123,6 @@ if (humanScore > computerScore) {
     console.log("The match is a tie!");
 }        
 
-}
-// Start the game
-playGame();
+
+
 
