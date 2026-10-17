@@ -14,7 +14,8 @@ let computerScore = 0;
 
 // Plays one round of game
     function playRound(humanChoice, computerChoice) {
-       let text; 
+       clearRoundLogs();
+        let text; 
        if (humanChoice === computerChoice) {
         text = `It's a draw! Both chose ${humanChoice}`;
         appendText(text);
@@ -38,7 +39,8 @@ let computerScore = 0;
     }
     // Print current score after the round
     let score =`Score -> You: ${humanScore} | Computer: ${computerScore}`;
-    const scoreBoard.textContent = `Score -> You: ${humanScore} | Computer: ${computerScore}`;
+    const scoreBoard = document.querySelector(".score-board");
+    scoreBoard.textContent = `Score -> You: ${humanScore} | Computer: ${computerScore}`;
 
 }
 //Event listener
@@ -67,7 +69,7 @@ const buttons= document.querySelectorAll("button");
             }
                 computerChoice = getComputerChoice();
                 playRound(humanChoice, computerChoice);
-
+// Score checks for 5 points
                 if (humanScore === 5 || computerScore === 5){ 
                 declareResult();
                 resetStats();
@@ -91,7 +93,7 @@ let result;
         result = `\n Final Score -> Human: ${humanScore} | Computer: ${computerScore}
     \nThe match is a tie!`;
         appendResult(result);
-}        
+    }        
 }
 
 function appendText(text) {
@@ -109,12 +111,12 @@ function appendResult(result) {
     div.appendChild(heading);
 
     appendText(result);
-}
+    }
 
 function resetStats() {
 humanScore = 0;
 computerScore = 0;
-}
+    }
 
 function clearDiv() {
     document.querySelectorAll("p").forEach( p => p.parentNode.removeChild(p));
@@ -126,4 +128,8 @@ function clearDiv() {
     if (header) { 
         header.remove();
     }
+}
+
+function clearRoundLogs() {
+    document.querySelectorAll(".results p").forEach(p => p.remove());
 }
