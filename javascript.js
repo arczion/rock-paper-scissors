@@ -49,6 +49,12 @@ const buttons= document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", (event) => {
             let target = event.target;
+
+            const isMatchOver = document.querySelector("h3");
+
+            if (isMatchOver && target.className !== 'new-game') {
+                return;
+            }
             let humanChoice;
             let computerChoice;
 
