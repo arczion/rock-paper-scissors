@@ -130,10 +130,10 @@ function clearDiv() {
         header.remove();
     }
     
-    document.querySelectorAll("p").forEach( p => p.parentNode.removeChild(p));
+    document.querySelectorAll(".results p").forEach( p => p.parentNode.removeChild(p));
     
     const scoreBoard = document.querySelector(".score-board");
-    scoreBoard.textContent = `Score -> You: 0 | Computer: 0`;
+    scoreBoard.textContent = "Score -> You: 0 | Computer: 0";
 }
 
 function clearRoundLogs() {
