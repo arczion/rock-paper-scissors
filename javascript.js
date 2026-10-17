@@ -1,58 +1,5 @@
-console.log("Hello World!");
+// generates computer choice, returns string
 
-/* Rock Paper Scissors
-
-Both parties play between 3 values at the same time, rock paper or scissors
-
-Opponent has random choice between 3 values, rock paper or scissors
-
-Player has a random value gotten by input, assuming the correct input is entered everytime for this project
-
-both the values are compared and goes through conditional checks, which compare the values and declare a winner
-
-        rock beats scissors, scissor beat paper, paper beats rock
-
-The game is repeated for n number of rounds, and the winner is declared based on the max no. of wins
-
-
-PSUEDOCODE
-
-
-Generate a random value between 1 & 3 
-Assign rock paper and scissors to each of the values
-Get an input from the user for either rock paper and scissor
-compare the input from the random value generated
-compare the inputs with the conditonal statements to check which wins
-save the win in a winning variable, increment for each win.
-repeat the rounds
-calculate the wins
-declare winner based on max wins
-
-/*
-possible combinations 
-
-rock paper
-rock scissor
-rock rock
-
-paper rock
-paper scissor
-paper paper
-
-scissor rock
-scissor paper
-scissor scissor
-*/
-
-//0 - rock 1- paper 2-scissor
-// generate a random number between 1 & 3
-// return string
-
-/* var humanScore = 0;
-var computerScore = 0; declaring inside play game function, this will remove the need to reset it.
-*/
-
-// 1.Computer choice generator
 function getComputerChoice() {
     
     let compChoice = Math.floor(Math.random() * 3);
@@ -60,10 +7,12 @@ function getComputerChoice() {
     else if (compChoice == 1) return "paper";
     return "scissors"
 }
-// the score variables have to declared on top before being called
-    let humanScore = 0;
-    let computerScore = 0;
 
+// stores scores
+let humanScore = 0;
+let computerScore = 0;
+
+// Playes one round of game
     function playRound(humanChoice, computerChoice) {
         
        if (humanChoice === computerChoice) {
@@ -131,5 +80,5 @@ if (humanScore > computerScore) {
 }        
 }
 
-
+const div = document.querySelector(".results");
 
