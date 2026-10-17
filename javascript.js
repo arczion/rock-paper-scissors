@@ -12,7 +12,7 @@ function getComputerChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-// Playes one round of game
+// Plays one round of game
     function playRound(humanChoice, computerChoice) {
         
        if (humanChoice === computerChoice) {
@@ -46,6 +46,11 @@ const buttons= document.querySelectorAll("button");
         button.addEventListener("click", (event) => {
             let target = event.target;
             count++;
+                if (count === 5){ 
+                declareResult();
+                resetStats();
+                }   
+
             console.log(count);
             switch(target.className) {
                 case 'rock' :
@@ -97,14 +102,12 @@ function appendResult(result) {
     const div = document.querySelector(".results");
     const resultText = document.createElement("p");
     const heading = document.createElement("h3")
-    h3.textContent = "FINAL RESULT";
+    heading.textContent = "FINAL RESULT";
     resultText.textContent = result;
     div.appendChild(heading);
     div.appendChild(resultText);
 }
 
-if (count === 5){ 
-    declareResult();
-    humanScore = 0;
-    computerScore = 0;
+function resetStats() {
+    
 }
