@@ -38,7 +38,7 @@ let computerScore = 0;
     }
     // Print current score after the round
     let score =`Score -> You: ${humanScore} | Computer: ${computerScore}`;
-    appendText(score);
+    const scoreBoard.textContent = `Score -> You: ${humanScore} | Computer: ${computerScore}`;
 
 }
 //Event listener
@@ -119,8 +119,10 @@ computerScore = 0;
 function clearDiv() {
     document.querySelectorAll("p").forEach( p => p.parentNode.removeChild(p));
     
+    const scoreBoard = document.querySelector(".score-board");
+    scoreBoard.textContent = `Score -> You: 0 | Computer: 0`;
+
     const header = document.querySelector("h3");
-    
     if (header) { 
         header.remove();
     }
