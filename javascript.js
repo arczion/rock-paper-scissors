@@ -37,7 +37,8 @@ let computerScore = 0;
         appendText(text);
     }
     // Print current score after the round
-    console.log(`Score -> You: ${humanScore} | Computer: ${computerScore}`);
+    let score =`Score -> You: ${humanScore} | Computer: ${computerScore}`;
+
 }
 //Event listener
 let count =0;
@@ -45,18 +46,10 @@ const buttons= document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", (event) => {
             let target = event.target;
-            count++;
-                if (count === 5){ 
-                declareResult();
-                resetStats();
-                }   
-
-            console.log(count);
             switch(target.className) {
                 case 'rock' :
                     humanChoice = 'rock';
                     computerChoice = getComputerChoice();
-                    console.log(computerChoice);
                     playRound(humanChoice, computerChoice);
                     break;
                 case 'paper' :
@@ -65,12 +58,22 @@ const buttons= document.querySelectorAll("button");
                     playRound(humanChoice, computerChoice);
                     break;
                 case 'scissors' :
-                    console.log('Scissors');
                     humanChoice = 'scissors';
                     computerChoice = getComputerChoice();
                     playRound(humanChoice, computerChoice);
                     break;
+                case 'new-game' :
+                    resetStats();
+                    clearDiv();
+                    break;
+
             }
+            count++;
+            console.log(count);
+                if (count === 5){ 
+                declareResult();
+                resetStats();
+                }   
         });
     });
 
@@ -109,5 +112,13 @@ function appendResult(result) {
 }
 
 function resetStats() {
-    
+humanScore = 0;
+computerScore = 0;
+count = 0;
+}
+
+function clearDiv() {
+    document.querySelectorAll("p").forEach( p => p.parentNode.removeChild(p));
+    const header = document.querySelector("h3");
+    header.remove();
 }
