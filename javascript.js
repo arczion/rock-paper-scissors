@@ -101,16 +101,23 @@ const buttons= document.querySelectorAll("button");
                     playRound(humanChoice, computerChoice);
                     break;
                 case 'paper' :
-                    console.log('Paper');
+                    humanChoice = 'paper';
+                    computerChoice = getComputerChoice();
+                    playRound(humanChoice, computerChoice);
                     break;
                 case 'scissors' :
                     console.log('Scissors');
+                    humanChoice = 'scissors';
+                    computerChoice = getComputerChoice();
+                    playRound(humanChoice, computerChoice);
                     break;
             }
         });
     });
 
 // Final game declaration
+function declareResult(){
+
 console.log("FINAL RESULT");
 if (humanScore > computerScore) {
     console.log(`\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}`);
@@ -122,7 +129,7 @@ if (humanScore > computerScore) {
     console.log(`\n Final Score -> Human: ${humanScore} | Computer: ${computerScore}`);
     console.log("The match is a tie!");
 }        
-
+}
 
 
 
