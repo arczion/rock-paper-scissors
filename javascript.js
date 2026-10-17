@@ -50,6 +50,7 @@ const buttons= document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", (event) => {
             let target = event.target;
+            count++;
             switch(target.className) {
                 case 'rock' :
                     humanChoice = 'rock';
@@ -72,8 +73,7 @@ const buttons= document.querySelectorAll("button");
                     break;
 
             }
-            count++;
-            console.log(count);
+                console.log(count);
                 if (count === 5){ 
                 declareResult();
                 resetStats();
