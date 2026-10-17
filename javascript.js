@@ -76,7 +76,7 @@ const buttons= document.querySelectorAll("button");
 
             }
                 console.log(count);
-                if (count === 5){ 
+                if (humanScore === 5 || computerScore === 5){ 
                 declareResult();
                 resetStats();
                 }   
