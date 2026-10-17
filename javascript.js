@@ -102,7 +102,7 @@ let result;
 }        
 }
 
-function appendText(text, score) {
+function appendText(text) {
     const div = document.querySelector(".results");
     const para = document.createElement("p");
     para.textContent = text;
@@ -123,11 +123,14 @@ function appendResult(result) {
 function resetStats() {
 humanScore = 0;
 computerScore = 0;
-count = 0;
 }
 
 function clearDiv() {
     document.querySelectorAll("p").forEach( p => p.parentNode.removeChild(p));
+    
     const header = document.querySelector("h3");
-    header.remove();
+    
+    if (header) { 
+        header.remove();
+    }
 }
