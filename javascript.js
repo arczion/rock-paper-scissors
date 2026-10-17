@@ -101,8 +101,20 @@ function playGame() {
 
 const buttons= document.querySelectorAll("button");
     buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-            alert(button.className);
+        button.addEventListener("click", (event) => {
+            let target = event.target;
+
+            switch(target.className) {
+                case 'rock' :
+                    console.log('Rock');
+                    break;
+                case 'paper' :
+                    console.log('Paper');
+                    break;
+                case 'scissors' :
+                    console.log('Scissors');
+                    break;
+            }
         });
     });
 
