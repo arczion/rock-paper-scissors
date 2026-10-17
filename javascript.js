@@ -16,7 +16,8 @@ let computerScore = 0;
     function playRound(humanChoice, computerChoice) {
         
        if (humanChoice === computerChoice) {
-        console.log(`It's a draw! Both chose ${humanChoice}`);
+        let text = `It's a draw! Both chose ${humanChoice}`;
+        appendText(text);
     }     
     // Check all combinations where the human wins
     else if (
@@ -25,23 +26,27 @@ let computerScore = 0;
         (humanChoice === "scissors" && computerChoice === "paper")
     ) {
         humanScore++;
-        console.log(`You win this round! ${humanChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}.`);
+        text = `You win this round! ${humanChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}.`;
+        appendText(text);
+
     }
     // If it is not a tie and human didn't win, the computer has won and those conditions can be ignored
     else {
         computerScore++;
-        console.log(`You lose this round! ${computerChoice.toUpperCase()} beats ${humanChoice.toUpperCase()}.`);
+        text = `You lose this round! ${computerChoice.toUpperCase()} beats ${humanChoice.toUpperCase()}.`;
+        appendText(text);
     }
     // Print current score after the round
     console.log(`Score -> You: ${humanScore} | Computer: ${computerScore}`);
 }
 //Event listener
-
+let count =0;
 const buttons= document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", (event) => {
             let target = event.target;
-
+            count++;
+            console.log(count);
             switch(target.className) {
                 case 'rock' :
                     humanChoice = 'rock';
@@ -65,20 +70,41 @@ const buttons= document.querySelectorAll("button");
     });
 
 // Final game declaration
+
 function declareResult(){
 
-console.log("FINAL RESULT");
-if (humanScore > computerScore) {
-    console.log(`\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}`);
-    console.log("Congratulations! You won the match!");
+  if (humanScore > computerScore) {
+    let result =`\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}\nCongratulations! You won the match!`;
+    appendResult(result);
+    
 } else if (humanScore < computerScore) {
-    console.log(`\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}`);
-    console.log("Game Over! The Computer wins the match. ");
+    let result = `\nFinal Score -> Human: ${humanScore} | Computer: ${computerScore}\nGame Over! The Computer wins the match.`;
+    appendResult(result);
 } else {
-    console.log(`\n Final Score -> Human: ${humanScore} | Computer: ${computerScore}`);
-    console.log("The match is a tie!");
+    let result = `\n Final Score -> Human: ${humanScore} | Computer: ${computerScore}\nThe match is a tie!`;
+    appendResult(result);
 }        
 }
 
-const div = document.querySelector(".results");
+function appendText(text) {
+    const div = document.querySelector(".results");
+    const para = document.createElement("p");
+    para.textContent = text;
+    div.appendChild(para);
+    }
 
+function appendResult(result) {
+    const div = document.querySelector(".results");
+    const resultText = document.createElement("p");
+    const heading = document.createElement("h3")
+    h3.textContent = "FINAL RESULT";
+    resultText.textContent = result;
+    div.appendChild(heading);
+    div.appendChild(resultText);
+}
+
+if (count === 5){ 
+    declareResult();
+    humanScore = 0;
+    computerScore = 0;
+}
