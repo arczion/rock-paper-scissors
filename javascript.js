@@ -50,19 +50,21 @@ const buttons= document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", (event) => {
             let target = event.target;
-            count++;
             switch(target.className) {
                 case 'rock' :
+                    count++;
                     humanChoice = 'rock';
                     computerChoice = getComputerChoice();
                     playRound(humanChoice, computerChoice);
                     break;
                 case 'paper' :
+                    count++;
                     humanChoice = 'paper';
                     computerChoice = getComputerChoice();
                     playRound(humanChoice, computerChoice);
                     break;
                 case 'scissors' :
+                    count++;
                     humanChoice = 'scissors';
                     computerChoice = getComputerChoice();
                     playRound(humanChoice, computerChoice);
