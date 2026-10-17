@@ -67,7 +67,7 @@ const buttons= document.querySelectorAll("button");
             }
                 computerChoice = getComputerChoice();
                 playRound(humanChoice, computerChoice);
-                
+
                 if (humanScore === 5 || computerScore === 5){ 
                 declareResult();
                 resetStats();
@@ -104,12 +104,11 @@ function appendText(text) {
 
 function appendResult(result) {
     const div = document.querySelector(".results");
-    const resultText = document.createElement("p");
     const heading = document.createElement("h3")
     heading.textContent = "FINAL RESULT";
-    resultText.textContent = result;
     div.appendChild(heading);
-    div.appendChild(resultText);
+
+    appendText(result);
 }
 
 function resetStats() {
